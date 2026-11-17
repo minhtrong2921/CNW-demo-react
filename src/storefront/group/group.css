@@ -13,7 +13,7 @@
 }
 .group-intro .page-intro > p:last-child,
 .group-intro > div > p:last-child {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
   margin-top: 16px;
   line-height: 1.7;
@@ -31,7 +31,7 @@
   border: 1px solid var(--ink);
   border-radius: 10px;
   background: var(--os-sunny);
-  font-size: 13px;
+  font-size: 14px;
 }
 .group-banner > div {
   display: flex;
@@ -95,7 +95,7 @@
   font-weight: 500;
 }
 .group-steps span {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -132,11 +132,11 @@
   border-radius: 10px;
   background: var(--surface);
   color: var(--ink);
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
 }
 .group-member-tab small {
-  font-size: 10px;
+  font-size: 13px;
   color: var(--muted);
 }
 .group-member-tab[aria-selected='true'] {
@@ -156,7 +156,7 @@
   border: 0;
   background: transparent;
   color: var(--ink);
-  font-size: 12px;
+  font-size: 14px;
   width: 120px;
   min-height: 44px;
 }
@@ -181,7 +181,7 @@
   color: var(--danger);
 }
 .group-empty {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
   padding: 22px 0;
 }
@@ -224,15 +224,15 @@
   min-width: 0;
 }
 .group-menu-list strong {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
 }
 .group-menu-list li > div > span {
-  font-size: 10px;
+  font-size: 13px;
   color: var(--muted);
 }
 .group-menu-price {
-  font-size: 12px;
+  font-size: 14px;
 }
 .group-menu-list .quick-add {
   position: static;
@@ -250,7 +250,7 @@
 .group-summary .group-split {
   width: 100%;
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 14px;
 }
 .group-split th,
@@ -261,7 +261,7 @@
   font-weight: 400;
 }
 .group-split thead th {
-  font-size: 10px;
+  font-size: 13px;
   color: var(--muted);
 }
 .group-split th[scope='row'],
@@ -292,7 +292,7 @@
 }
 .group-freeship p,
 p.group-freeship {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.7;
   color: var(--sage-ink);
   margin-top: 8px;
@@ -322,7 +322,7 @@ p.group-freeship.done {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
-  font-size: 13px;
+  font-size: 14px;
 }
 .group-collect strong {
   font-weight: 600;
@@ -371,7 +371,7 @@ p.group-freeship.done {
   gap: 6px;
 }
 .group-badge {
-  font-size: 9px;
+  font-size: 12px;
   padding: 2px 7px;
   border-radius: 99px;
   background: var(--os-header);
@@ -386,11 +386,11 @@ p.group-freeship.done {
   white-space: nowrap;
 }
 .group-pay-items {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
 }
 .group-pay-math {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--muted);
 }
 .group-qr {
@@ -409,7 +409,7 @@ p.group-freeship.done {
   justify-content: center;
   gap: 8px;
   min-height: 120px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--sage-ink);
 }
 .group-pay-card .os-button {

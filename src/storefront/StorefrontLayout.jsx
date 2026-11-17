@@ -47,12 +47,14 @@ function RouteFocus() {
       document.removeEventListener('close', focusPage, true);
     };
   }, [location.pathname, location.key, type]);
-  useEffect(
-    () => () => {
-      positions.set(location.key, window.scrollY);
-    },
-    [location.key],
-  );
+  useEffect(() => {
+    // Record while the user scrolls; reading scrollY on unmount is too late
+    // because the next (shorter) page has already been committed.
+    const key = location.key;
+    const save = () => positions.set(key, window.scrollY);
+    window.addEventListener('scroll', save, { passive: true });
+    return () => window.removeEventListener('scroll', save);
+  }, [location.key]);
   return null;
 }
 export function StorefrontLayout() {
@@ -131,7 +133,8 @@ export function StorefrontLayout() {
               >
                 <StoreIcon name="bag" />
                 <span className="bag-label">Giỏ hàng</span>
-                <span className="bag-count" aria-live="polite">
+                {/* key remounts the badge on every change so the pop animation replays */}
+                <span key={quote.totalQuantity} className="bag-count bag-pop" aria-live="polite">
                   {quote.totalQuantity}
                 </span>
               </button>

@@ -77,5 +77,5 @@ test('group order: share link, join, split, one QR per person, order the total',
   await expect(host.getByTestId('member-qr').nth(1)).toHaveAttribute('alt', /Lan, 39\.000 đ/);
   await host.getByRole('button', { name: /Đặt đơn tổng/ }).click();
   await expect(host).toHaveURL(/#\/checkout/);
-  await expect(host.getByTestId('store-total')).toHaveText('74.000 đ');
+  await expect(host.locator('#store-main').getByTestId('store-total')).toHaveText('74.000 đ');
 });

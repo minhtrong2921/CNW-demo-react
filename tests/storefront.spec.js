@@ -38,7 +38,7 @@ test('complete local purchase with editable MB VietQR and persisted receipt', as
   await page.getByRole('button', { name: 'Thêm Trà đào vào giỏ', exact: true }).click();
   await page.getByRole('button', { name: 'Đóng giỏ hàng', exact: true }).click();
   await addBottle(page, 2);
-  await expect(page.getByTestId('store-total')).toHaveText('145.000 đ');
+  await expect(page.getByTestId('drawer-total')).toHaveText('145.000 đ');
   await page
     .getByRole('dialog')
     .getByRole('link', { name: 'Tiếp tục đặt hàng', exact: true })

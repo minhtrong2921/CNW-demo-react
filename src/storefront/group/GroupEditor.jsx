@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { catalog, catalogById, categories, formatPrice } from '../data/catalog.js';
 import { QuantityControl } from '../cart/QuantityControl.jsx';
 import { OrderSummary } from '../cart/OrderSummary.jsx';
+import { FREE_SHIPPING_THRESHOLD } from '../cart/cartModel.js';
 import { ImageWithFallback } from '../ui/ImageWithFallback.jsx';
 import { StoreIcon } from '../ui/Icons.jsx';
 import {
@@ -218,10 +219,10 @@ export function GroupEditor({ group, me, setGroup, onCopyLink, onLeave }) {
                 role="progressbar"
                 aria-label="Tiến độ miễn phí giao hàng"
                 aria-valuemin={0}
-                aria-valuemax={150000}
+                aria-valuemax={FREE_SHIPPING_THRESHOLD}
                 aria-valuenow={quote.subtotal}
               >
-                <span style={{ width: `${Math.min(100, (quote.subtotal / 150000) * 100)}%` }} />
+                <span style={{ width: `${Math.min(100, (quote.subtotal / FREE_SHIPPING_THRESHOLD) * 100)}%` }} />
               </div>
               <p>
                 Gọi thêm cùng nhau để cả nhóm được miễn phí giao, mỗi người khỏi trả phần phí
@@ -229,13 +230,13 @@ export function GroupEditor({ group, me, setGroup, onCopyLink, onLeave }) {
               </p>
             </div>
           )}
-          {quote.subtotal >= 150000 && (
+          {quote.subtotal >= FREE_SHIPPING_THRESHOLD && (
             <p className="group-freeship done">
               <StoreIcon name="check" size={16} /> Đơn nhóm đã đủ 150.000 đ, cả nhóm được miễn phí
               giao.
             </p>
           )}
-          <OrderSummary quote={quote}>
+          <OrderSummary quote={quote} showShippingProgress={false}>
             <button
               className="os-button primary full"
               disabled={!quote.total}

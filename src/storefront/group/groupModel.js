@@ -1,5 +1,5 @@
 import { catalogById } from '../data/catalog.js';
-import { getCartQuote, normalizeCart } from '../cart/cartModel.js';
+import { getCartQuote, normalizeCart, FREE_SHIPPING_THRESHOLD } from '../cart/cartModel.js';
 
 /*
  * Group order ("đặt chung") without a backend. The whole group lives in one small object
@@ -177,7 +177,7 @@ export function getGroupQuote(group) {
     payerCount: paying.length,
     paidCount: paying.filter((m) => m.member.paid).length,
     collected: paying.filter((m) => m.member.paid).reduce((sum, m) => sum + m.due, 0),
-    freeShippingGap: quote.subtotal > 0 && quote.shipping > 0 ? 150000 - quote.subtotal : 0,
+    freeShippingGap: quote.subtotal > 0 && quote.shipping > 0 ? FREE_SHIPPING_THRESHOLD - quote.subtotal : 0,
   };
 }
 
